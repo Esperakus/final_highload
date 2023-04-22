@@ -16,7 +16,7 @@ const (
 	port     = 5432
 	user     = "test"
 	password = "test"
-	dbname   = "postgres"
+	dbname   = "test"
 )
 
 func CheckError(err error) {

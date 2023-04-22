@@ -27,13 +27,17 @@ bootstrap:
   pg_hba:
   - host replication replicator 127.0.0.1/32 md5
   - host replication replicator samenet md5
-  - host all all 0.0.0.0/0 md5
+  - host all all samenet md5
 
   users:
     admin:
       password: admin
       options:
         - createrole
+        - createdb
+    test:
+      password: test
+      options:
         - createdb
 
 postgresql:

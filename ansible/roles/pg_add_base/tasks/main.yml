@@ -1,0 +1,30 @@
+---
+# tasks file for pg_add_base
+
+# - name: create pgsql user
+#   become: true
+#   become_user: postgres
+#   port: 5000
+#   postgresql_user:
+
+#     name: test
+#     password: test
+#     state: present
+#   # run_once: true
+
+- name: install psycopg2
+  dnf:
+    name:
+      - python3-psycopg2
+    state: present
+
+- name: Create a new database with name "test"
+  become: true
+  postgresql_db:
+    port: 5000
+    login_host: 127.0.0.1
+    login_user: test
+    login_password: test
+    name: test
+    owner: test
+  # run_once: true

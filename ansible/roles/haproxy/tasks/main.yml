@@ -5,6 +5,7 @@
   dnf:
     name: 
       - haproxy
+      # - psycopg2
       # - rsyslog
     state: present
     update_cache: true

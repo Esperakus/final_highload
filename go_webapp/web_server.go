@@ -7,11 +7,12 @@ import (
 	"io"
 	"net/http"
 	"os"
+
 	_ "github.com/lib/pq"
 )
 
 const (
-	host     = "db_haproxy"
+	host     = "haproxy"
 	port     = 5432
 	user     = "test"
 	password = "test"
@@ -90,7 +91,6 @@ func getALL(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/octet-stream")
 	w.Write(fileBytes)
 
-
 }
 
 func main() {
@@ -98,8 +98,6 @@ func main() {
 	http.HandleFunc("/db", getDB)
 	http.HandleFunc("/image", getImage)
 	http.HandleFunc("/all", getALL)
-
-	
 
 	http.ListenAndServe(":8090", nil)
 }

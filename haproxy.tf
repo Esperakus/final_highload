@@ -1,7 +1,7 @@
 resource "yandex_compute_instance" "haproxy" {
 
-  name     = "db_haproxy"
-  hostname = "db_haproxy"
+  name     = "haproxy"
+  hostname = "haproxy"
 
   resources {
     cores         = 2
